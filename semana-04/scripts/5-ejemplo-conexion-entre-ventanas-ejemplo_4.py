@@ -36,7 +36,7 @@ if __name__ == '__main__':
         print(traceback)
 
     sys.__excepthook__ = hook
-    
+
     app = QApplication([])
 
     # Instanciamos dos ventanas distintas

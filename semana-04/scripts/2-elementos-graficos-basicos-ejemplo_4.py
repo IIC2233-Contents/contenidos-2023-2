@@ -19,14 +19,14 @@ class MiVentana(QWidget):
         self.edit1.resize(100, 20)
         self.boton1 = QPushButton('&Calcular', self)
         self.boton1.resize(self.boton1.sizeHint())
-
+        self.setWindowTitle("Ejemplo con layouts")
         """
         Creamos el layout horizontal y agregamos los widgets mediante el
         método addWidget(). El método addStretch() nos permite incluir
         opcionalmente espaciadores.
         """
         hbox = QHBoxLayout()
-        hbox.addStretch(1)
+        hbox.addStretch(20)
         hbox.addWidget(self.label1)
         hbox.addWidget(self.edit1)
         hbox.addWidget(self.boton1)
@@ -38,7 +38,7 @@ class MiVentana(QWidget):
         Notar el juego entre el valor recibido por los espaciadores.
         """
         vbox = QVBoxLayout()
-        vbox.addStretch(5)
+        vbox.addStretch(20)
         vbox.addLayout(hbox)
         vbox.addStretch(1)
         self.setLayout(vbox)
@@ -49,7 +49,9 @@ if __name__ == '__main__':
         print(type)
         print(traceback)
     sys.__excepthook__ = hook
-    
+
     app = QApplication([])
     form = MiVentana()
     sys.exit(app.exec())
+
+# Realmente se puso todo en la esquina inferior derecha.

@@ -1,6 +1,7 @@
 import sys
 from PyQt6.QtWidgets import (QApplication, QWidget, QPushButton, QLabel,
-                            QGridLayout, QVBoxLayout)
+                             QGridLayout, QVBoxLayout)
+
 
 class MiVentana(QWidget):
     def __init__(self, *args, **kwargs):
@@ -17,7 +18,7 @@ class MiVentana(QWidget):
                    '0', 'CE', 'C']
 
         posiciones = [(i, j) for i in range(4) for j in range(3)]
-        
+
         for posicion, valor in zip(posiciones, valores):
             boton = QPushButton(valor, self)
 
@@ -57,7 +58,8 @@ class MiVentana(QWidget):
         posicion = self.grilla.getItemPosition(idx)
 
         # Actualizamos label1
-        self.label1.setText(f'Status: Presionado boton {idx}, en fila/columna: {posicion[:2]}.')
+        self.label1.setText(
+            f'Status: Presionado boton {idx}, en fila/columna: {posicion[:2]}.')
 
 
 if __name__ == '__main__':

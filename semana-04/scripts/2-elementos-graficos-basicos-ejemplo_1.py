@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     """
     Recordar que en el programa principal debe existir una instancia de
-    QApplication ANTES de crear los demas widgets, incluida la ventana
+    QApplication ANTES de crear los demás widgets, incluida la ventana
     principal.
     Si la aplicación no recibe parámetros desde la línea de comandos,
     QApplication recibe una lista vacia como QApplication([]).

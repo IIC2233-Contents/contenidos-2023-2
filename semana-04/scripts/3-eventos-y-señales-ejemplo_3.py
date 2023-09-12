@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QLabel
 class MiVentana(QWidget):
     def __init__(self):
         super().__init__()
-        self.setGeometry(100, 100, 110, 400)
+        self.setGeometry(00, 0, 110, 400)
         self.label = QLabel("Haz clic en mí", self)
         self.label.setGeometry(10, 10, 90, 100)
         self.label.setStyleSheet("background-color: lightblue;")

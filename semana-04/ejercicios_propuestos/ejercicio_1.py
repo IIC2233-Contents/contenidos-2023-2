@@ -8,7 +8,7 @@ class MiVentana(QWidget):
 
         # Definimos la geometría de la ventana.
         # Parámetros: (x_superior_izq, y_superior_izq, ancho, alto)
-        self.setGeometry(200, 0, 400, 300)
+        self.setGeometry(200, 100, 300, 300)
 
         # Podemos dar nombre a la ventana (Opcional)
         self.setWindowTitle('Mi Primera Ventana')
@@ -20,8 +20,15 @@ if __name__ == '__main__':
         print(traceback)
     sys.__excepthook__ = hook
 
-    app = QApplication([])    ## Creamos ls base de la app: QApplication
-    ventana = MiVentana()     ## Construirmos un QWidget que será nuestra ventana
-    ventana.show()            ## Mostramos la ventna
-    sys.exit(app.exec())      ## La aplicación se inicia con app.exec(). Esto habilita el loop de eventos
-                              ## Su valor de retorno es un código de salida que luego lo tome sys.exit()
+    app = QApplication([])
+    ventana = MiVentana()
+    ventana2 = MiVentana()
+    lista_ventanas = []
+    for cantidad in range(100):
+        ventana = MiVentana()
+        lista_ventanas.append(ventana)
+    for ventana in lista_ventanas:
+        ventana.show()
+    sys.exit(app.exec())
+
+# Editado el código para probar colapso abriendo 100 ventanas al mismo tiempo casi xddd.

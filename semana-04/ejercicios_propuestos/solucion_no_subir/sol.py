@@ -1,9 +1,11 @@
 # calculadora.py
-from PyQt5.QtCore import pyqtSignal, QObject
+from PyQt6.QtCore import pyqtSignal, QObject
 # ventana.py
 import sys
-from PyQt5.QtCore import pyqtSignal, QObject
-from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QPushButton, QLineEdit)
+from PyQt6.QtCore import pyqtSignal, QObject
+from PyQt6.QtWidgets import (
+    QApplication, QWidget, QLabel, QPushButton, QLineEdit)
+
 
 class Calculadora(QObject):
 
@@ -37,7 +39,8 @@ class Calculadora(QObject):
                 self.multiplicacion(accion['valor1'], accion['valor2'])
             elif accion['operacion'] == "dividir":
                 if accion['valor2'] == 0:
-                    self.senal_mostrar_resultado.emit('Error: No dividir por cero')
+                    self.senal_mostrar_resultado.emit(
+                        'Error: No dividir por cero')
                 else:
                     self.cuociente(accion['valor1'], accion['valor2'])
         else:
@@ -96,29 +99,32 @@ class Ventana(QWidget):
     def sumar(self):
         valor1 = self.input_valor1.text()
         valor2 = self.input_valor2.text()
-        self.senal_calcular.emit({'operacion': 'sumar', 'valor1': valor1, 'valor2': valor2})
+        self.senal_calcular.emit(
+            {'operacion': 'sumar', 'valor1': valor1, 'valor2': valor2})
 
     def restar(self):
         valor1 = self.input_valor1.text()
         valor2 = self.input_valor2.text()
-        self.senal_calcular.emit({'operacion': 'restar', 'valor1': valor1, 'valor2': valor2})
+        self.senal_calcular.emit(
+            {'operacion': 'restar', 'valor1': valor1, 'valor2': valor2})
 
     def multiplicar(self):
         valor1 = self.input_valor1.text()
         valor2 = self.input_valor2.text()
-        self.senal_calcular.emit({'operacion': 'multiplicar', 'valor1': valor1, 'valor2': valor2})
+        self.senal_calcular.emit(
+            {'operacion': 'multiplicar', 'valor1': valor1, 'valor2': valor2})
 
     def dividir(self):
         valor1 = self.input_valor1.text()
         valor2 = self.input_valor2.text()
-        self.senal_calcular.emit({'operacion': 'dividir', 'valor1': valor1, 'valor2': valor2})
+        self.senal_calcular.emit(
+            {'operacion': 'dividir', 'valor1': valor1, 'valor2': valor2})
 
     def mostrar_resultado(self, text):
         texto = f'Resultado: {text}'
         self.resultado.setText(texto)
         self.resultado.resize(self.resultado.sizeHint())
         self.resultado.repaint()
-
 
 
 if __name__ == '__main__':
@@ -130,8 +136,4 @@ if __name__ == '__main__':
     ventana.senal_calcular.connect(calculadora.validar_input)
     calculadora.senal_mostrar_resultado.connect(ventana.mostrar_resultado)
 
-
-
-
-    
     sys.exit(app.exec())

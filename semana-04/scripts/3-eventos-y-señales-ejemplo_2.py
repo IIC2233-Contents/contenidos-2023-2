@@ -1,5 +1,6 @@
 import sys
-from PyQt6.QtWidgets import (QApplication, QWidget, QPushButton, QLabel, QHBoxLayout, QVBoxLayout)
+from PyQt6.QtWidgets import (
+    QApplication, QWidget, QPushButton, QLabel, QHBoxLayout, QVBoxLayout)
 from PyQt6.QtCore import QCoreApplication
 
 
@@ -12,7 +13,7 @@ class MiVentana(QWidget):
         self.label1 = QLabel('Status: -', self)
 
         """
-        El evento de cada botón es conectado con su slot. En este caso es 
+        El evento de cada botón es conectado con su slot. En este caso es
         el mismo método boton_callback().
         """
         self.boton1 = QPushButton('&Boton 1', self)
@@ -59,7 +60,7 @@ if __name__ == '__main__':
         print(traceback)
 
     sys.__excepthook__ = hook
-    
+
     app = QApplication([])
     form = MiVentana()
     form.show()
