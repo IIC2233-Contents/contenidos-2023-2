@@ -52,7 +52,7 @@ class MiVentana(QWidget):
         self.fondo.setStyleSheet("background: orange")
         self.fondo.setGeometry(0, 0, 500, 500)
 
-        self.cuadrados = []
+        self.cuadrados = list()  # Lista para guardar los cuadrados
         self.labels = {}
 
         for i in range(100):
@@ -66,7 +66,8 @@ class MiVentana(QWidget):
         label.setGeometry(-50, -50, 50, 50)
         # Creamos un QPixmap de color aleatorio
         pixmap = QPixmap(50, 50)
-        pixmap.fill(QColor(randint(20, 200), randint(20, 200), randint(20, 200)))
+        pixmap.fill(QColor(randint(20, 200),
+                    randint(20, 200), randint(20, 200)))
         label.setPixmap(pixmap)
         label.show()
 

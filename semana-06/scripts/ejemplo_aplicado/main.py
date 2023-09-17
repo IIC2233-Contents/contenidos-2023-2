@@ -3,9 +3,9 @@ from frontend.ventana import Ventana
 import sys
 import parametros_general as p
 
-# Usar Uno de los 2 "Juego".
-from backend.logica_qthread import Juego
-# from backend.logica_qtimer import Juego
+# Usar uno de los 2 "Juego".
+# from backend.logica_qthread import Juego
+from backend.logica_qtimer import Juego
 
 
 class Simulacion:
@@ -25,7 +25,7 @@ class Simulacion:
         self.backend.senal_aparecer_icono.connect(self.frontend.aparecer_icono)
         self.backend.senal_mover_icono.connect(self.frontend.mover_icono)
 
-    # Empezamos todo. En este caso es el backend quien comienza la ejecución de todo
+    # Empezamos todo. En este caso es el backend quien comienza la ejecución de todo.
     def iniciar(self):
         self.backend.empezar()
 

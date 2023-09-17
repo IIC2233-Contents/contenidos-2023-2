@@ -16,7 +16,7 @@ class Cuadrado(QThread):
         Cuadrado.identificador += 1
 
         # guardamos la señal
-        self.senal_mover = senal_mover
+        self.senal_mover = senal_mover  # <--- señal
 
         # Seteamos la posición inicial y la guardamos para usarla como una property
         self._posicion = (0, 0)
@@ -51,13 +51,14 @@ class MiVentana(QWidget):
 
         # Definimos QLabel para el fondo de la ventana
         self.fondo = QLabel(self)
-        self.fondo.setStyleSheet("background: orange")
+        self.fondo.setStyleSheet("background: yellow")
         self.fondo.setGeometry(0, 0, 500, 500)
 
         self.cuadrados = []
         self.labels = {}
 
-        for i in range(100):
+        for i in range(1000):  # No es saludable crear tantos cuadrados,
+            # ya fue testeado.
             self.crear_cuadrado()
 
         self.senal_mover.connect(self.mover)
@@ -66,14 +67,16 @@ class MiVentana(QWidget):
     def crear_cuadrado(self):
         # Creamos el label y se lo pasamos al Cuadrado
         label = QLabel(self)
-        label.setGeometry(-50, -50, 50, 50)
+        label.setGeometry(-50, -50, 10, 10)
         # Creamos un QPixmap de color aleatorio
         pixmap = QPixmap(50, 50)
-        pixmap.fill(QColor(randint(20, 200), randint(20, 200), randint(20, 200)))
+        pixmap.fill(QColor(randint(20, 200),
+                    randint(20, 200), randint(20, 200)))
         label.setPixmap(pixmap)
         label.show()
 
-        nuevo_cuadrado = Cuadrado(self.senal_mover, self.width(), self.height())
+        nuevo_cuadrado = Cuadrado(
+            self.senal_mover, self.width(), self.height())
         self.labels[nuevo_cuadrado.id] = label
         self.cuadrados.append(nuevo_cuadrado)
         nuevo_cuadrado.start()

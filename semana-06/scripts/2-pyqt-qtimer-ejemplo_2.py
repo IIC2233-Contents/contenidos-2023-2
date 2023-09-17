@@ -42,7 +42,8 @@ class MiVentana(QWidget):
     def init_gui(self):
         # Configuramos los widgets de la interfaz
         # Definimos un montón de labels que corresponderán a un Qtimer cada uno
-        self.labels = {i: QLabel("Status: esperando Qtimer", self) for i in range(1, 6)}
+        self.labels = {i: QLabel("Status: esperando Qtimer", self)
+                       for i in range(1, 6)}
         self.boton = QPushButton("Ejecutar Qtimers", self)
         self.boton.clicked.connect(self.ejecutar_timers)
 
@@ -76,7 +77,7 @@ class MiVentana(QWidget):
     def actualizar_labels(self, indice, texto):
         """
         Este método actualiza el label correspondiente según los datos
-        enviados desde un timer através del índice y aplica el texto.
+        enviados desde un timer a través del índice y aplica el texto.
         """
         self.labels[indice].setText(texto)
 

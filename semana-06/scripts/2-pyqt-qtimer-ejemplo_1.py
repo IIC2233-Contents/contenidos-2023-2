@@ -11,7 +11,7 @@ class RelojDigital(QWidget):
 
         # Crear label encargado de mostrar la hora
         self.label_timer = QLabel()
-        self.label_timer.setFont(QFont("Times", 50))
+        self.label_timer.setFont(QFont("OldEnglish", 50))
 
         # Crear layout vertical para nuestro label
         layout = QVBoxLayout()

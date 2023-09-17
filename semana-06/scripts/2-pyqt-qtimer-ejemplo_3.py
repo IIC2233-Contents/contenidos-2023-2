@@ -65,3 +65,7 @@ if __name__ == "__main__":
     app = QApplication([])
     form = RelojDigital()
     sys.exit(app.exec())
+
+# Basicamente, se ha creado un reloj que se oculta a los 5 segundos
+# y se muestra a los 8 segundos.
+# Interesante...

@@ -34,7 +34,7 @@ class Ventana(QWidget):
         self.largo = tamaño_ventana[1]
 
         # Definimos tamaño y título de la ventana
-        self.setGeometry(100, 100, self.ancho, self.largo)
+        self.setGeometry(0, 0, self.ancho, self.largo)
         self.setWindowTitle("Ejemplo Aplicado")
 
         # Definimos QLabel para el fondo de la ventana

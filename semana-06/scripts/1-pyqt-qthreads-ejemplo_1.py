@@ -60,7 +60,7 @@ class MiVentana(QWidget):
     def actualizar_labels(self, evento):
         """
         Este método actualiza el label según los datos enviados desde el
-        thread através del objeto evento. Para este ejemplo, el método
+        thread a través del objeto evento. Para este ejemplo, el método
         recibe el evento, pero podría también no recibir nada.
         """
         self.label.setText(evento)

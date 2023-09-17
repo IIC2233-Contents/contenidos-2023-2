@@ -1,1 +1,1 @@
-TAMAÑO_VENTANA = (800, 500)  # ancho, largo
+TAMAÑO_VENTANA = (1920, 1080)  # ancho, largo

@@ -34,7 +34,7 @@ class MiVentana(QWidget):
         """
         Este método es el encargado ejecutar una acción cada vez que el botón
         es presionado. En esta caso, realiza el cambio en print_label y el status bar
-        mediate la emisión de una señal en la cual se envía el texto correspondiente.
+        mediante la emisión de una señal en la cual se envía el texto correspondiente.
         """
         self.print_label.setText(f"Print texto: {self.line_edit.text()}")
         self.print_label.resize(self.print_label.sizeHint())

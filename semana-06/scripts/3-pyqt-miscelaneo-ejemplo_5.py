@@ -76,7 +76,7 @@ class MiVentana(QWidget):
     def actualizar_labels(self, indice, texto):
         """
         Este método actualiza el label correspondiente según los datos
-        enviados desde un thread através del índice y aplica el texto.
+        enviados desde un thread a través del índice y aplica el texto.
         """
         self.labels[indice].setText(texto)
 

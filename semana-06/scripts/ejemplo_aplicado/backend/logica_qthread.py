@@ -7,7 +7,8 @@ class Icono(QThread):
     # Atributo de clase para tener un ID distinto por ícono
     identificador = 0
 
-    def __init__(self, x, y, ancho_ventana, tamaño, velocidad, senal_mover):
+    def __init__(self, x: int, y: int, ancho_ventana: int,
+                 tamaño: int, velocidad: int, senal_mover: pyqtSignal):
         super().__init__()
         # Guardamos su ID y sumamos 1 al atributo de clase
         self.id = Icono.identificador

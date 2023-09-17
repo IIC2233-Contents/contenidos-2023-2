@@ -1,1 +1,1 @@
-COLOR_FONDO = "gray"
+COLOR_FONDO = "white"
