@@ -14,16 +14,20 @@ class MiVentana(QWidget):
         self.boton_empezar = QPushButton("Empezar musica de fondo", self)
         self.boton_parar = QPushButton("Parar música de fondo", self)
         self.boton_umineko = QPushButton("Umineko", self)
+        self.boton_umineko_parar = QPushButton("Parar Umineko", self)
 
         self.boton_sorpresa.setGeometry(10, 10, 230, 30)
         self.boton_empezar.setGeometry(10, 50, 230, 30)
         self.boton_parar.setGeometry(10, 90, 230, 30)
         self.boton_umineko.setGeometry(10, 130, 230, 30)
+        self.boton_umineko_parar.setGeometry(10, 170, 230, 30)
 
         self.boton_sorpresa.clicked.connect(self.empezar_sonido_sorpresa)
         self.boton_empezar.clicked.connect(self.empezar_musica_fondo)
         self.boton_parar.clicked.connect(self.parar_musica_fondo)
         self.boton_umineko.clicked.connect(self.empezar_musica_umineko)
+        self.boton_umineko_parar.clicked.connect(
+            self.parar_musica_umineko)
 
         # Configuramos las propiedades de la ventana.
         self.setWindowTitle("Ejemplo Sonidos")
@@ -65,6 +69,10 @@ class MiVentana(QWidget):
     def empezar_musica_umineko(self):
         if not self.media_player_umineko.isPlaying():
             self.media_player_umineko.play()
+
+    def parar_musica_umineko(self):
+        if self.media_player_umineko.isPlaying():
+            self.media_player_umineko.stop()
 
 
 if __name__ == "__main__":
