@@ -16,7 +16,7 @@ class MiVentana(QWidget):
         self.boton_umineko = QPushButton("Umineko", self)
         self.boton_umineko_parar = QPushButton("Parar Umineko", self)
 
-        self.boton_sorpresa.setGeometry(10, 10, 230, 30)
+        self.boton_sorpresa.setGeometry(700, 500, 230, 30)
         self.boton_empezar.setGeometry(10, 50, 230, 30)
         self.boton_parar.setGeometry(10, 90, 230, 30)
         self.boton_umineko.setGeometry(10, 130, 230, 30)
@@ -30,8 +30,8 @@ class MiVentana(QWidget):
             self.parar_musica_umineko)
 
         # Configuramos las propiedades de la ventana.
-        self.setWindowTitle("Ejemplo Sonidos")
-        self.setGeometry(50, 50, 250, 200)
+        self.setWindowTitle("Ejemplo múltiples sonidos")
+        self.setGeometry(0, 0, 1920, 1080)
 
         # Opción MP3: QMediaPlayer junto a QAudioOutput
         # No te preocupes si te sale, en consola.
