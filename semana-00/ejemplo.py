@@ -9,6 +9,6 @@ class MiClase:
 
     def __init__(self, argumento):
         self.argumento = argumento
-        
+
     def __str__(self):
-        return f"Hola, mi argumento es {self.argumento}." 
+        return f"Hola, mi argumento es {self.argumento}."
