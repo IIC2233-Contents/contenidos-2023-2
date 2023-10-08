@@ -45,7 +45,9 @@ if __name__ == "__main__":
                             args=(socket_cliente,), daemon=True)
             thread.start()
             counter += 1
-        except ConnectionError:
+        except ConnectionError as e:
             print("Ocurrió un error.")
+            print("El mensaje de error fue:")
+            print(e)
 
     sock.close()

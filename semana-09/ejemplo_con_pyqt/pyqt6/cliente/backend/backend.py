@@ -41,8 +41,10 @@ class Logica(QObject):
         try:
             self.conectar_a_servidor()
             self.escuchar()
-        except ConnectionError:
+        except ConnectionError as e:
             print("Conexión terminada.")
+            print("El mensaje de error fue:")
+            print(e)
             self.socket_cliente.close()
             exit()
 
