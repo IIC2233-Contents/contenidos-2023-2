@@ -9,7 +9,8 @@ class MiVentana(QWidget):
         Este método inicializa la ventana.
         """
         super().__init__(*args, **kwargs)
-        
+        self.args = args
+        self.kwargs = kwargs
         # Llamamos a un método propio que inicializa los elementos de la ventana
         self.init_gui()
 
@@ -21,7 +22,7 @@ class MiVentana(QWidget):
         # Ajustamos la geometría de la ventana y su título
         self.setGeometry(200, 100, 200, 300)
         self.setWindowTitle('Ventana con label y cuadro de texto')
-        
+
         # Agregamos etiquetas usando el widget QLabel(texto_inicial, padre)
         self.label1 = QLabel('Texto:', self)
         self.label1.move(10, 15)

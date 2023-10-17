@@ -39,6 +39,8 @@ class MiVentana(QWidget):
     def init_gui(self):
         # Fija la geometría de la ventana principal
         self.setGeometry(200, 200, 120, 120)
+
+        # Fijamos el verdadero tamaño máximo de la ventana.
         self.setMaximumHeight(120)
         self.setMaximumWidth(120)
 
