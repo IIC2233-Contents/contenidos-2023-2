@@ -36,7 +36,7 @@ class VentanaQueSeEdita(QWidget):
         self.etiqueta.move(20, 10)
         self.etiqueta.resize(self.etiqueta.sizeHint())
 
-        self.setGeometry(700, 300, 290, 150)
+        self.setGeometry(1200, 300, 290, 150)
         self.setWindowTitle('Recibe señal')
         self.show()
     

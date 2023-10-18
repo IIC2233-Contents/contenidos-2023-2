@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     sys.__excepthook__ = hook
     
-    app = QApplication([])
+    app = QApplication([])  # Recordar, SOLO UNA VEZ POR APLICACIÓN. 
     # senales = MisSenales()
     ventana_click = VentanaPresionable()
     ventana_edit = VentanaQueSeEdita()

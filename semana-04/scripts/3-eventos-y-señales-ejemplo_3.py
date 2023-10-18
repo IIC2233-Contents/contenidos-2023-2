@@ -38,6 +38,7 @@ class MiVentana(QWidget):
         y = event.position().y()
         print(f"El mouse se mueve... está en {x},{y}")
 
+
 if __name__ == "__main__":
     def hook(type, value, traceback):
         print(type)
