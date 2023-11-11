@@ -7,7 +7,7 @@ def application(environ, start_response):
 
     response = {"message": "Hello World"}
     if path.startswith("/goodbye"):
-        response["message"] = "Que la fuerza esté contigo"
+        response["message"] = "Que la fuerza NO esté contigo"
 
     status = "200 OK"
     content_type = "application/json"
