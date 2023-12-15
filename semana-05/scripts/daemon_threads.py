@@ -7,7 +7,7 @@ def dormilon():
     time.sleep(2)
     print(f"{threading.current_thread().name} se durmió.")
 
-    
+
 def con_insomnio():
     print(f"{threading.current_thread().name} tiene sueño...")
     time.sleep(10)
